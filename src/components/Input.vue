@@ -1,10 +1,11 @@
 <template>
     <div class = "input" id = "input">
         <div class = "grid-container">
+            <slot name="title"></slot>
                 <textarea name = "message_here" id = "message_here" rows = "5"
                           :value = "msg" @input="getMessage"
                           placeholder = "Write complaint here.."></textarea>
-            <hr>
+            <slot name="footer"></slot>
             {{msg}}
         </div>
     </div>
