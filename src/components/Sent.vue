@@ -1,13 +1,15 @@
 <template>
     <div class = "sent" id = "sent">
-        <h2>Sent Messages here</h2>
+        <h4>Your Message Has been sent, Thank you.</h4>
     </div>
 </template>
 <script>
     export default {
         data() {
-
-        }
+            return{
+//                 console.log("This will send the data in the background")
+            }
+        },
     }
 
 </script>

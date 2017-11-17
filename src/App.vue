@@ -3,16 +3,19 @@
         <!--keep alive is to ensure that the components do not reset-->
         <keep-alive>
             <!--:is is binding the property of visible component to the component tag-->
-            <component :is="visible_component"></component>
+            <component :is = "visible_component"></component>
         </keep-alive>
-        <div class="button medium default" @click="visible_component='sent'">Send</div>
-        <div class="button medium default" @click="visible_component='message'">Back</div>
+        <div class = "large-8 medium-8 large-offset-2 medium-offset-2 columns">
+            <div class = "button medium default" @click = "visible_component='sent'">Send</div>
+            <div class = "button medium default" @click = "visible_component='message'">Back</div>
+        </div>
     </div>
 </template>
 
 <script>
     import Message from './components/Message.vue'
     import Sent from './components/Sent.vue'
+
     export default {
         name: 'app',
         data() {
