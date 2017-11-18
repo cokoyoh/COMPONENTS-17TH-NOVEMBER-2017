@@ -3,8 +3,8 @@
         <div class = "grid-container">
             <div class="large-8 medium-8 columns large-offset-2 medium-offset-2">
                 <input-message :msg="message" @messageChanged="message=$event">
-                    <h4 slot="footer">Your About to Send</h4>
-                    <h4 slot="title">Message to Admin</h4>
+                    <h4 slot="footer" class="footer">Your About to Send</h4>
+                    <h4 slot="title" class="header">Message to Admin</h4>
                 </input-message>
             </div>
         </div>
@@ -26,5 +26,9 @@
 </script>
 
 <style type = "scss">
-
+    .message{
+        .footer{
+            margin-bottom: 40px;
+        }
+    }
 </style>

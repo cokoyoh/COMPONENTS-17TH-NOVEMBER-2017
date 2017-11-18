@@ -1,13 +1,13 @@
 <template>
-    <div id = "app">
+    <div id = "app" class="app">
         <!--keep alive is to ensure that the components do not reset-->
         <keep-alive>
             <!--:is is binding the property of visible component to the component tag-->
             <component :is = "visible_component"></component>
         </keep-alive>
-        <div class = "large-8 medium-8 large-offset-2 medium-offset-2 columns">
-            <div class = "button medium default" @click = "visible_component='sent'">Send</div>
-            <div class = "button medium default" @click = "visible_component='message'">Back</div>
+        <div class = "large-12 medium-12 columns">
+            <div class = "button medium default send" @click = "send()">Send</div>
+            <div class = "button medium default back" @click = "visible_component='message'">Back</div>
         </div>
     </div>
 </template>
@@ -26,35 +26,25 @@
         components: {
             'message': Message,
             'sent': Sent
+        },
+        methods:{
+            send(){
+                this.visible_component = 'sent';
+                alert("Message will be sent to admin")
+                console.log(this.$options.name)
+            }
         }
     }
 </script>
 
 <style lang = "scss">
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-
-    h1, h2 {
-        font-weight: normal;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
+    .app{
+        padding: 40px 0 40px;
+        .back{
+            margin-left: 50px;
+        }
+        .send{
+            margin-left: 210px;
+        }
     }
 </style>
